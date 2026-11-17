@@ -1,0 +1,541 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+body {
+  background-color: #0b0f19;
+  color: #e2e8f0;
+  line-height: 1.6;
+}
+
+/* Common Section Styles */
+.section { padding: 5rem 10%; }
+.dark-bg { background-color: #070a12; }
+.section-header { margin-bottom: 3rem; text-align: left; }
+.section-header h2 { font-size: 2rem; color: #f8fafc; font-weight: 700; margin-bottom: 0.8rem; }
+.lead-text { color: #94a3b8; font-size: 1.1rem; max-width: 900px; line-height: 1.7; }
+
+/* Buttons */
+.btn-primary {
+  background: #0284c7;
+  color: #fff;
+  padding: 0.7rem 1.4rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  display: inline-block;
+  transition: all 0.2s;
+}
+.btn-primary:hover { background: #0369a1; }
+.btn-primary.large { padding: 0.9rem 2rem; font-size: 1.1rem; }
+
+.btn-secondary {
+  color: #e2e8f0;
+  border: 1px solid #334155;
+  padding: 0.7rem 1.4rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
+  margin-left: 1rem;
+}
+.btn-secondary:hover { border-color: #64748b; background: rgba(255,255,255,0.05); }
+
+/* PART 1: Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 8%;
+  background: rgba(11, 15, 25, 0.95);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid #1e293b;
+}
+
+.logo { font-size: 1.3rem; font-weight: 700; color: #fff; letter-spacing: -0.5px; }
+.logo span { color: #38bdf8; }
+
+.nav-links a { color: #94a3b8; text-decoration: none; margin: 0 1.2rem; font-size: 0.95rem; }
+.nav-links a:hover { color: #38bdf8; }
+
+/* PART 2: Hero Section (Split Grid) */
+.hero {
+  padding: 6rem 10%;
+  background: radial-gradient(circle at 80% 20%, rgba(56, 189, 248, 0.08) 0%, transparent 50%);
+}
+
+.hero-container {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.badge {
+  background: rgba(56, 189, 248, 0.1);
+  color: #38bdf8;
+  padding: 0.4rem 0.9rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.hero h1 {
+  font-size: 2.8rem;
+  margin: 1.2rem 0 1rem;
+  line-height: 1.2;
+  font-weight: 700;
+  color: #fff;
+}
+
+.hero p {
+  color: #94a3b8;
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+/* Hero 右側媒體容器：自動適應影片原圖比例 */
+/* Hero 右側外層容器：確保寬度與影片對齊並居中 */
+.hero-media-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;    /* 強制子元素水平居中 */
+  text-align: center;
+}
+
+/* 影片容器 */
+.hero-media {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  background: transparent;
+}
+
+.hero-media video,
+.hero-media img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  border-radius: 12px;
+}
+
+/* 影片下方英文標題：加大間距、精緻字級與居中對齊 */
+.media-caption {
+  width: 100%;
+  margin-top: 1.2rem;       /* 與影片拉開優雅的呼吸間距 */
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #94a3b8;           /* 質感冷灰字體 */
+  letter-spacing: 0.08em;   /* 微調字距，提升現代科技感 */
+  text-transform: uppercase;/* 轉為大寫，視覺更俐落 */
+  text-align: center;       /* 水平文字居中 */
+}
+
+.media-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+}
+
+.placeholder-content {
+  text-align: center;
+  color: #64748b;
+  font-size: 0.9rem;
+}
+
+.pulse-dot {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  background: #38bdf8;
+  border-radius: 50%;
+  margin-bottom: 0.8rem;
+  box-shadow: 0 0 12px #38bdf8;
+}
+
+/* PART 3: Capabilities 2x2 Grid */
+.grid-2x2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.capability-card {
+  background: #111827;
+  border: 1px solid #1e293b;
+  border-radius: 8px;
+  padding: 2.2rem;
+  transition: transform 0.2s, border-color 0.2s;
+}
+.capability-card:hover { border-color: #38bdf8; transform: translateY(-3px); }
+
+.card-tag {
+  display: inline-block;
+  color: #38bdf8;
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+  border-bottom: 2px solid #0284c7;
+  padding-bottom: 0.3rem;
+}
+
+.capability-card ul { list-style: none; }
+.capability-card li {
+  color: #cbd5e1;
+  font-size: 1rem;
+  margin-bottom: 0.8rem;
+  position: relative;
+  padding-left: 1.5rem;
+}
+.capability-card li::before {
+  content: "•";
+  color: #38bdf8;
+  font-weight: bold;
+  font-size: 1.2rem;
+  position: absolute;
+  left: 0;
+  top: -2px;
+}
+
+/* PART 4: Accordion Questions */
+.accordion-container { width: 100%; }
+
+.accordion-item {
+  background: #111827;
+  border: 1px solid #1e293b;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  overflow: hidden;
+}
+
+.accordion-item summary {
+  padding: 1.25rem 1.8rem;
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: #f1f5f9;
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.accordion-item summary::-webkit-details-marker { display: none; }
+.accordion-item summary::after { content: "+"; font-size: 1.4rem; color: #38bdf8; }
+.accordion-item[open] summary::after { content: "−"; }
+
+.accordion-content {
+  padding: 0 1.8rem 1.25rem;
+  color: #94a3b8;
+  font-size: 0.95rem;
+  border-top: 1px solid #1e293b;
+  margin-top: 0.5rem;
+  padding-top: 1.2rem;
+}
+
+/* PART 5: CTA Banner */
+.cta-banner {
+  text-align: center;
+  padding: 5rem 2rem;
+  background: #070a12;
+  border-top: 1px solid #1e293b;
+  border-bottom: 1px solid #1e293b;
+}
+.cta-banner h3 { font-size: 1.8rem; margin-bottom: 1.8rem; color: #fff; }
+
+/* PART 6: Footer */
+/* PART 6: Footer (AltusFoils 1:1 Matching Style) */
+.site-footer {
+  background-color: #000;
+  color: #a1a1aa;
+  padding: 3.5rem 10% 2.5rem;
+  font-size: 0.88rem;
+  border-top: 1px solid #18181b;
+}
+
+/* Top text row with border bottom */
+.footer-top-text {
+  padding-bottom: 2rem;
+  margin-bottom: 2.5rem;
+  border-bottom: 1px solid #27272a;
+  color: #e4e4e7;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.footer-top-text u {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+/* Main 4-column layout */
+.footer-main-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  padding-bottom: 3rem;
+}
+
+.footer-col h4 {
+  color: #ffffff;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  margin-bottom: 1.2rem;
+}
+
+.footer-col a {
+  display: block;
+  color: #a1a1aa;
+  text-decoration: none;
+  margin-bottom: 0.6rem;
+  transition: color 0.2s;
+}
+
+.footer-col a:hover {
+  color: #ffffff;
+}
+
+.footer-col a.blue-link {
+  color: #38bdf8;
+  margin-top: 1rem;
+}
+
+.footer-col p {
+  color: #a1a1aa;
+  margin-bottom: 0.4rem;
+}
+
+.footer-col p.sub-text {
+  color: #71717a;
+  font-size: 0.82rem;
+  margin-bottom: 1.2rem;
+}
+
+/* Social media icons */
+.social-icons {
+  display: flex;
+  gap: 1.2rem;
+  align-items: center;
+}
+
+.social-icons a {
+  display: inline-block;
+  color: #a1a1aa;
+  margin-bottom: 0;
+}
+
+.social-icons a:hover {
+  color: #ffffff;
+}
+
+/* Subscribe Button */
+.btn-subscribe {
+  background-color: #ffffff;
+  color: #000000;
+  border: none;
+  padding: 0.6rem 1.6rem;
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  border-radius: 2px;
+  transition: background-color 0.2s;
+}
+
+.btn-subscribe:hover {
+  background-color: #e4e4e7;
+}
+
+/* Bottom Bar */
+.footer-bottom-bar {
+  border-top: 1px solid #27272a;
+  padding-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.75rem;
+  color: #71717a;
+  letter-spacing: 0.03em;
+}
+
+.legal-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.legal-links a {
+  color: #71717a;
+  text-decoration: none;
+}
+
+.legal-links a:hover {
+  color: #a1a1aa;
+}
+
+/* 獨立子頁面通用容器 */
+.page-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 2rem 6rem;
+  color: #f8fafc;
+}
+
+/* 頁面頂部主副標題 */
+.page-header {
+  margin-bottom: 3.5rem;
+  border-bottom: 1px solid #1e293b;
+  padding-bottom: 2rem;
+}
+
+.page-header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+
+.page-header p {
+  font-size: 1.15rem;
+  color: #94a3b8;
+  max-width: 800px;
+  line-height: 1.6;
+}
+
+/* 圖文對照二欄網格 */
+.page-content-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3.5rem;
+  align-items: center;
+}
+
+.content-text h2 {
+  font-size: 1.75rem;
+  color: #38bdf8;
+  margin-bottom: 1.5rem;
+}
+
+/* 條列說明樣式 */
+.detail-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.detail-list li {
+  font-size: 1.05rem;
+  color: #cbd5e1;
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.detail-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #38bdf8;
+  font-size: 1.3rem;
+  line-height: 1;
+  top: 0;
+}
+
+.detail-list strong {
+  color: #ffffff;
+}
+
+/* 右側媒體容器 */
+.content-media {
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  background: #111827;
+  border: 1px solid #1e293b;
+}
+
+.content-media img,
+.content-media video {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+/* ===== Navigation Header Styles Fix ===== */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 2.5rem;
+  background-color: #080d1a;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 2.25rem;
+}
+
+/* 清除瀏覽器預設藍色與底線，套用高質感灰白色 */
+.nav-menu a,
+.nav-menu a:visited {
+  color: #94a3b8 !important;
+  text-decoration: none !important;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: color 0.2s ease, border-color 0.2s ease;
+  padding: 0.25rem 0;
+  border-bottom: 2px solid transparent;
+}
+
+/* 滑鼠懸停與當前頁面 Active 狀態（亮藍色高亮） */
+.nav-menu a:hover,
+.nav-menu a.active {
+  color: #38bdf8 !important;
+  border-bottom-color: #38bdf8 !important;
+}
+
+/* 手機版適應 */
+@media (max-width: 768px) {
+  .page-content-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+/* Accordion 內項目清單樣式 */
+.accordion-content ul {
+  margin: 0;
+  padding-left: 1.2rem;
+  list-style-type: disc;
+}
+
+.accordion-content li {
+  color: #94a3b8;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+}
+
+.accordion-content li:last-child {
+  margin-bottom: 0;
+}

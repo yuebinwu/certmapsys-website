@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CertmapSysTech | High-Power Electric Systems</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- 引入全站統一樣式 (包含 Footer & Navbar 共用樣式) -->
+  <link rel="stylesheet" href="subpage.css">
+</head>
+<body>
+
+  <!-- PART 1: Navigation Header -->
+  <header class="navbar">
+    <div class="logo"><a href="index.html" style="text-decoration: none; color: inherit;">CertmapSys<span>Tech</span></a></div>
+    <nav class="nav-menu">
+      <a href="about.html">About</a>
+      <a href="core-tech.html">Core Tech</a>
+      <a href="engineering.html">Engineering</a>
+      <a href="solutions.html">Solutions</a>
+      <a href="applications.html">Applications</a>
+    </nav>
+    <a href="contact.html" class="btn-primary">Start a Conversation</a>
+  </header>
+
+  <!-- PART 2: Hero Section (Split Layout with Media Window) -->
+  <section class="hero" id="about">
+    <div class="hero-container">
+      <div class="hero-text">
+        <span class="badge">POWERING NEXT-GEN ELECTRIC MOBILITY</span>
+        <h1>Engineering the Intelligence Behind High-Power Electric Systems</h1>
+        <p>From battery health and energy estimation to electric propulsion and system integration, we engineer the technologies that keep demanding electric platforms reliable and serviceable.</p>
+        <div class="hero-btns">
+          <a href="core-tech.html" class="btn-primary">Explore Capabilities</a>
+          <a href="contact.html" class="btn-secondary">Talk to an Engineer</a>
+        </div>
+      </div>
+
+      <!-- Hero Media Container -->
+      <div class="hero-media-wrapper">
+        <div class="hero-media">
+          <video id="hero-vid" autoplay loop muted playsinline poster="poster.jpg">
+            <source src="equalizing.mp4" type="video/mp4">
+          </video>
+        </div>
+        <p class="media-caption">Active Equalization Demonstration</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PART 3: Capabilities & Experience (2x2 Matrix Grid) -->
+  <section id="capabilities" class="section dark-bg">
+    <div class="section-header">
+      <h2>Proven Engineering Excellence in High-Power Systems</h2>
+      <p class="lead-text">We have spent years engineering the difficult parts of high-power electric systems—battery health, energy measurement, cell consistency, and propulsion—and today we are applying that experience to the next generation of electric mobility.</p>
+    </div>
+
+    <!-- 2x2 Grid -->
+    <div class="grid-2x2">
+      <div class="capability-card">
+        <div class="card-tag">Technology</div>
+        <ul>
+          <li>Battery Health & Aging Intelligence</li>
+          <li>High-Power Battery Engineering</li>
+          <li>Energy Measurement & Estimation</li>
+          <li>Cell Consistency & Lifecycle Engineering</li>
+        </ul>
+        <a href="core-tech.html" class="card-link" style="display: inline-block; margin-top: 1rem; color: #38bdf8; text-decoration: none;">Learn More &rarr;</a>
+      </div>
+
+      <div class="capability-card">
+        <div class="card-tag">Engineering</div>
+        <ul>
+          <li>Battery Systems & Packaging</li>
+          <li>Battery Intelligence (SOH)</li>
+          <li>System Integration & Controls</li>
+          <li>Electric Propulsion Integration</li>
+        </ul>
+        <a href="engineering.html" class="card-link" style="display: inline-block; margin-top: 1rem; color: #38bdf8; text-decoration: none;">Learn More &rarr;</a>
+      </div>
+
+      <div class="capability-card">
+        <div class="card-tag">Solutions</div>
+        <ul>
+          <li>Battery SOH Tester</li>
+          <li>Built-in Battery Health Monitor</li>
+          <li>Battery Equalizing Modular Hardware</li>
+          <li>Electric Propulsion Platforms</li>
+        </ul>
+        <a href="solutions.html" class="card-link" style="display: inline-block; margin-top: 1rem; color: #38bdf8; text-decoration: none;">Learn More &rarr;</a>
+      </div>
+
+      <div class="capability-card">
+        <div class="card-tag">Applications</div>
+        <ul>
+          <li>eVTOL Battery System</li>
+          <li>Electric Marine & Watercraft</li>
+          <li>eMotorcycle & Light EV</li>
+          <li>Other High-Power Electric Mobility</li>
+        </ul>
+        <a href="applications.html" class="card-link" style="display: inline-block; margin-top: 1rem; color: #38bdf8; text-decoration: none;">Learn More &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+<!-- PART 4: Engineering Questions (Accordion - Bullet List Layout) -->
+  <section class="section">
+    <div class="section-header">
+      <h2>Engineering Questions</h2>
+      <p class="lead-text">Technical insights into high-power battery performance, measurement, and isolation.</p>
+    </div>
+
+    <div class="accordion-container">
+      <details class="accordion-item" open>
+        <summary>How does battery SOH affect system performance?</summary>
+        <div class="accordion-content">
+          <ul>
+            <li>Under factory-ideal conditions, cell performance is nearly identical, allowing the pack to achieve its maximum nominal charge capacity.</li>
+            <li>Over continuous charge and discharge cycles, ongoing chemical degradation reduces total energy retention.</li>
+            <li>When a fully charged battery can only store 70% of its original maximum capacity, its State of Health (SOH) is defined as 70%.</li>
+            <li>While chemical aging occurs naturally, high-C-rate operations, mechanical vibration, and internal thermal gradients significantly accelerate this decay.</li>
+            <li>Because operating dynamic voltage differentials reflect the instantaneous degradation rate during operation, SOH is evaluated as a dynamic, real-time value.</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="accordion-item">
+        <summary>How is battery SOH measured dynamically?</summary>
+        <div class="accordion-content">
+          <ul>
+            <li>By continuously monitoring individual cell and full-pack parameters in real time and comparing them against baseline factory profiles, the system derives accurate, dynamic SOH values. </li>
+            <li>Real-time SOH enables reliable prediction of deliverable output energy and remaining range, preventing unexpected power cutoffs during high-load operations.</li>
+
+          </ul>
+        </div>
+      </details>
+
+      <details class="accordion-item">
+        <summary>How do we design for high-power operation?</summary>
+        <div class="accordion-content">
+          <ul>
+            <li>The chargeable capacity of a battery equals its deliverable output energy plus internal conversion losses (as electrical energy converts to chemical energy during charging, and chemical energy converts back to electrical energy during discharge).</li>
+            <li>As cell-to-cell consistency degrades, individual cell parameters diverge under varying operating conditions, rendering overall battery-level parameters incapable of accurately reflecting true remaining capacity.</li>
+            <li>In high-power discharge scenarios, the cell with the lowest operational voltage quickly triggers the discharge cutoff threshold during 3C–5C discharge rates. This activates automatic battery protection, causing sudden power cutoffs.</li>
+            <li>Conversely, during high-rate charging (1C), the cell with the highest voltage surge rapidly hits the overvoltage threshold, triggering charge protection and shutting down charging prematurely.</li>
+            <li>Deploying high-current active equalization serves as an essential solution to overcome these challenges in high-power applications—particularly for demanding mobility platforms such as eVTOL, eFoil, and eMotorcycle systems.</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="accordion-item">
+        <summary>How do we design for waterproofing and corrosion resistance?</summary>
+        <div class="accordion-content">
+          <ul>
+            <li>Utilizing IP68-rated sealed aluminum enclosures paired with anti-corrosion marine-grade anodization.</li>
+            <li>Applying isolated internal potting techniques designed to withstand harsh marine and dynamic outdoor environments.</li>
+            <li>In harsh marine environments, battery enclosures, connectors, and seal interfaces face extreme engineering challenges, including advanced waterproofing materials, mechanical vibration damping, and flexible internal electrical architecture.</li>
+          </ul>
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <!-- PART 5: Pre-Footer CTA -->
+  <section class="cta-banner" style="text-align: center; padding: 5rem 8%; background-color: #0b0f19;">
+    <h3 style="color: #ffffff; font-size: 1.8rem; margin-bottom: 1.5rem; font-weight: 700;">
+      Talk to our engineering team about your next electric system.
+    </h3>
+    <a href="contact.html" class="btn-primary large">Start a Conversation</a>
+  </section>
+
+  <!-- PART 6: Footer (與所有子頁面完全一致) -->
+  <footer class="site-footer">
+    <div class="footer-top-text">
+      CertmapSysTech is pioneering next-generation electric propulsion and battery intelligence systems. 
+      Learn more about our technology stack or <u>contact our engineering team</u> for OEM partnerships.
+    </div>
+
+    <div class="footer-main-grid">
+      <!-- Column 1: Navigation -->
+      <div class="footer-col">
+        <h4>NAVIGATION</h4>
+        <a href="about.html">About</a>
+        <a href="core-tech.html">Core Tech</a>
+        <a href="engineering.html">Engineering</a>
+        <a href="solutions.html">Solutions</a>
+        <a href="applications.html">Applications</a>
+      </div>
+
+      <!-- Column 2: Technology -->
+      <div class="footer-col">
+        <h4>TECHNOLOGY</h4>
+        <p>Battery Intelligence</p>
+        <p>Cell Equalization</p>
+        <p>SOH Estimation Unit</p>
+        <p>Electric Propulsion</p>
+      </div>
+
+    <!-- Column 3: Connect & System -->
+      <div class="footer-col">
+        <h4>CONNECT & SYSTEM</h4>
+        <a href="mailto:certmapsys@gmail.com">certmapsys@gmail.com</a>
+        <a href="mailto:altusfoils@gmail.com">altusfoils@altusfoils.com</a>
+        <a href="contact.html" class="blue-link">Start a Conversation &rarr;</a>
+        <a href="https://www.certmapsys.com/indexuser.html" target="_blank" class="dashboard-link">CertmapSys Dashboard &rarr;</a>
+      </div>
+
+      <!-- Column 4: Stay Updated -->
+      <div class="footer-col">
+        <h4>STAY UPDATED</h4>
+        <p class="sub-text">Subscribe to receive tech updates and news on high-power mobility hardware.</p>
+        <button class="btn-subscribe">SUBSCRIBE</button>
+      </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="footer-bottom-bar">
+      <div>&copy; 2026 CertmapSysTech. All rights reserved.</div>
+      <div class="legal-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
